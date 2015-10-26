@@ -1,0 +1,6 @@
+- title t('.page_title')
+
+- content_for :header
+  = t('article.edit', name: @article.name)
+
+= render 'form'

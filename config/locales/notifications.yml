@@ -1,0 +1,19 @@
+en:
+  notifications:
+    alerts:
+      check_data : Please check form data
+
+    notices:
+      feedback_sent : "Your comment was successfully sent. You will be answered shortly."
+      updated       : Data was successfully updated.
+      enter_email   : We need you to enter your email address in order to finish this registration
+
+ru:
+  notifications:
+    alerts:
+      check_data : Проверьте данные формы
+
+    notices:
+      feedback_sent : "Ваш комментарий отправлен. Через некоторое время вам ответят по одному из указанных каналов связи"
+      updated       : Данные успешно обновлены.
+      enter_email   : Для завершения регистрации введите адрес электронной почты

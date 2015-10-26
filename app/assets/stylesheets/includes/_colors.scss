@@ -1,0 +1,19 @@
+// Colors
+$light-grey: #F6F6FD;
+$grey: #9797A6;
+$dark-grey: #252428;
+
+$black-transparent: rgba(17, 17, 17, .81);
+
+$white: white;
+
+$light-red: #F38A78;
+
+$color-collection:  (
+                     ('light-grey',        $light-grey        ),
+                     ('grey',              $grey              ),
+                     ('dark-grey',         $dark-grey         ),
+                     ('black-transparent', $black-transparent ),
+                     ('light-red',         $light-red         ),
+                     ('white',             $white             )
+                    );

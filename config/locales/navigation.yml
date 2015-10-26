@@ -1,0 +1,11 @@
+en:
+  navigation:
+    dashboard     : Dashboard
+    profile       : Profile
+    change_locale : Change language
+
+ru:
+  navigation:
+    profile       : Профиль
+    dashboard     : Домашняя
+    change_locale : Сменить язык

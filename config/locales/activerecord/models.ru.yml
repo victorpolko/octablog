@@ -1,0 +1,8 @@
+ru:
+  activerecord:
+    models:
+      user:
+        one   : пользователя
+        few   : пользователя
+        many  : пользователей
+        other : Пользователи

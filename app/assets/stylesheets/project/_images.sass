@@ -1,0 +1,36 @@
+@import "includes/mixins"
+
+=circular_image($size)
+  border-radius: $size
+  height: $size
+  width: $size
+
+.x-avatar
+  +inline-block
+  +circular_image(100px)
+
+  &_large
+    +circular_image(250px)
+
+  &_big
+    +circular_image(140px)
+
+  &_medium
+    +circular_image(80px)
+
+  &_small
+    +circular_image(50px)
+
+  &_profile
+    border: 5px solid $white
+    margin: -150px auto 15px
+
+  &_square
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 0
+    overflow: hidden
+
+.x-img-loading
+  opacity: 0

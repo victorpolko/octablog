@@ -1,0 +1,59 @@
+nav.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+      = link_to root_path
+        = image_tag 'logo.jpg', height: 50
+
+    .collapse.navbar-collapse#nav-menu
+      ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          li
+            = image_tag current_user.avatar(:thumb), class: 'x-avatar x-avatar_small'
+
+          li.dropdown
+            a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+              = current_user.first_name
+              span.caret<
+            ul.dropdown-menu
+              li
+                = link_to dashboard_path
+                  = t('navigation.dashboard')
+              li
+                = link_to profile_path
+                  = t('navigation.profile')
+              li
+                = link_to change_locale_path(locale: (I18n.locale.to_s == 'en' ? 'ru' : 'en')), method: :post
+                  = t('navigation.change_locale')
+          li
+            = link_to t('devise.links.sign_out'), destroy_user_session_path, method: :delete
+
+        - else
+          li
+            = link_to change_locale_path(locale: (I18n.locale.to_s == 'en' ? 'ru' : 'en')), method: :post
+              = t('navigation.change_locale')
+          li.dropdown
+            a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+              = t('devise.links.sign_in')
+              span.caret<
+            ul.dropdown-menu
+              li
+                = link_to user_omniauth_authorize_path(:facebook)
+                  | Facebook
+
+              li
+                = link_to user_omniauth_authorize_path(:twitter)
+                  | Twitter
+
+              li
+                = link_to user_omniauth_authorize_path(:vkontakte)
+                  | Vkontakte
+
+              li
+                = link_to new_user_registration_path
+                  | Devise

@@ -1,0 +1,37 @@
+@import "includes/mixins"
+
+.x-form
+  // .x-form-help
+  &-help
+    position: relative
+    color: $white
+    border-radius: 4px
+    margin-top: 10px
+    margin-bottom: 15px
+    padding: 10px 20px
+
+    &:after
+      content: ''
+      border-color: transparent transparent $grey transparent
+      border-style: solid
+      border-width: 0 8px 8px 8px
+      height: 0
+      position: absolute
+      right: 50%
+      top: -7px
+      width: 0
+
+    &_hint
+      background: $grey
+
+      &:after
+        border-color: transparent transparent $grey transparent
+
+    &_error
+      background: $light-red
+
+      &:after
+        border-color: transparent transparent $light-red transparent
+
+textarea
+  resize: vertical

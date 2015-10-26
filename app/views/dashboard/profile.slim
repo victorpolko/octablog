@@ -1,0 +1,38 @@
+- title t('.page_title')
+
+.row
+  .col-md-12
+    h3
+      = t('.personal')
+
+    = simple_form_for @profile || current_user, as: :profile, url: update_avatar_users_profile_path(current_user), remote: true, authenticity_token: true, html: { class: 'form-horizontal js-image-form' }, defaults: { required: false } do |f|
+      .col-md-12
+        = f.input :avatar, wrapper: :horizontal_form_narrow
+          = image_tag current_user.avatar, class: 'x-avatar h-mb-2'
+          = f.input_field :avatar, id: 'image_input_validated', class: 'pull-left'
+
+          = f.button :submit, t('form_actions.update'), class: 'btn-sm btn-info pull-right'
+
+    = simple_form_for @profile || current_user, as: :profile, url: users_profile_path(current_user), html: { class: 'form-horizontal' }, wrapper: :horizontal_form_narrow, defaults: { required: false } do |f|
+      .col-md-12
+        = f.input :first_name, autofocus: true
+        = f.input :last_name
+        = f.input :email
+
+      .col-md-8.text-right
+        = f.button :submit, t('form_actions.save'), class: 'btn-info'
+
+  .col-md-12
+    h3
+      = t('.password')
+
+    .row
+      = simple_form_for @profile || current_user, as: :profile, url: update_password_users_profile_path(current_user), html: { class: 'form-horizontal' }, wrapper: :horizontal_form_narrow, defaults: { required: true, autocomplete: 'off' } do |f|
+
+        .col-md-12
+          = f.input :current_password
+          = f.input :password, label: t('.new_password')
+          = f.input :password_confirmation
+
+        .col-md-8.text-right
+          = f.button :submit, t('form_actions.update'), class: 'btn-info'

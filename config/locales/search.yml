@@ -1,0 +1,25 @@
+en:
+  search:
+    title       : Search articles
+    name        : Title contains
+    text        : Text contains
+    rating_from : Rating from
+    rating_to   : Rating to
+    author      : Author name
+    category    : Category
+    created_fr  : Created since
+    created_to  : Created to
+    empty       : No articles found.
+
+ru:
+  search:
+    title       : Поиск статей
+    name        : Название содержит
+    text        : Текст содержит
+    rating_from : Рейтинг от
+    rating_to   : Рейтинг до
+    author      : Имя автора
+    category    : Категория
+    created_fr  : Дата создания с
+    created_to  : Дата создания по
+    empty       : Статей не найдено.

@@ -1,0 +1,27 @@
+- title t('.page_title')
+
+- content_for :header
+  = t('.page_title')
+
+.col-md-12
+  - @articles.each do |article|
+    = link_to article_path(article)
+      .col-sm-6.col-md-3
+        .thumbnail
+          = image_tag article.cover.url
+          .caption
+            h3.x-article__name
+              = article.name
+            p
+              span #{ t('article.rating') }: #{ article.rating }
+            p
+              .x-article__author> #{ t('article.author') } #{ article.author.full_name }
+
+
+.col-md-12
+  - if @articles.none?
+    p = t('article.empty')
+    = link_to t('article.create'), new_article_path, class: 'btn btn-info'
+
+  - else
+    = link_to t('article.add'), new_article_path, class: 'btn btn-info'

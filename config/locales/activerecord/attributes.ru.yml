@@ -1,0 +1,42 @@
+ru:
+  timestamps: &timestamps
+    created_at : Дата создания
+    updated_at : Дата обновления
+    id         : ID
+
+  devise_tracking: &devise_tracking
+    current_sign_in_at  : Начало текущей сессии
+    current_sign_in_ip  : IP текущей сессии
+    last_sign_in_at     : Последнее посещение
+    last_sign_in_ip     : IP последней сессии
+    sign_in_count       : Количество сессий
+
+  activerecord:
+    attributes:
+      article:
+        name_ru     : Название
+        name_en     : Название (Английский)
+        rating      : Рейтинг
+        text        : Текст
+        user_id     : Автор
+        category_id : Категория
+        category    : Категория
+        cover       : Картинка
+        <<: *timestamps
+
+      category:
+        name_ru : Название
+        name_en : Название (Английский)
+        <<: *timestamps
+
+      user:
+        avatar      : Аватар
+        email       : Электронная почта
+        first_name  : Имя
+        last_name   : Фамилия
+        password    : Пароль
+        current_password : Старый пароль
+        password_confirmation : Подтвердите пароль
+        remember_me : Запомнить меня
+        <<: *devise_tracking
+        <<: *timestamps

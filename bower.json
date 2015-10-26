@@ -1,0 +1,24 @@
+{
+  "name": "octablog",
+  "version": "0.0.0",
+  "authors": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "3.3.4",
+    "jquery-ujs": "~1.1.0",
+    "sass-mediaqueries": "*",
+    "lodash": "*",
+    "knockout": "*",
+    "knockout-validation": "*",
+    "jquery.inputmask": "3.*",
+    "inputmask-multi": "*",
+    "jquery.bind-first": "*"
+  }
+}

@@ -1,0 +1,39 @@
+@import "includes/mixins"
+
+// All helper-classes should start with 'h-' prefix, i.e. h-text-center
+
+/******************
+ *** ATOMIC CSS ***
+ ******************/
+$attr-array: (margin padding) ('' top right bottom left) (0 1 2 3 4 5 8)
+
+// Classes like h-p-1,
+@each $prop in nth($attr-array, 1)
+  @each $direction in nth($attr-array, 2)
+    @each $value in nth($attr-array, 3)
+      @if $direction == '' and $value == 0
+        // .h-p-0
+        .h-#{str-slice($prop,0,1)}-#{$value}
+          #{$prop}: #{$value}px !important
+
+      @else if $direction == ''
+        // .h-p-1, .h-p-2, .h-p-3, .h-p-4 ...
+        .h-#{str-slice($prop,0,1)}-#{$value}
+          #{$prop}: #{$value}0px !important
+
+      @else if $value != 0
+        // .h-pt-1, .h-pr-1, .h-pb-1, .h-pl-1 ...
+        .h-#{str-slice($prop,0,1)}#{str-slice($direction,0,1)}-#{$value}
+          #{$prop}-#{$direction}: #{$value}0px !important
+
+      @else
+        // .h-pt-0, .h-pr-0, .h-pb-0, .h-pl-0 ...
+        .h-#{str-slice($prop,0,1)}#{str-slice($direction,0,1)}-#{$value}
+          #{$prop}-#{$direction}: #{$value} !important
+
+// Colors (see includes/_colors.scss)
+@each $color in $color-collection
+  .h-c-#{nth($color, 1)}
+    color: nth($color, 2) !important
+  .h-bc-#{nth($color, 1)}
+    background-color: nth($color, 2) !important

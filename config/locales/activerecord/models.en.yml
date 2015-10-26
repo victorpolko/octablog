@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models:
+      user:
+        one   : user
+        few   : users
+        many  : users
+        other : Users

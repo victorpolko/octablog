@@ -1,0 +1,21 @@
+= simple_form_for @article, html: { class: 'form-horizontal' }, wrapper: :horizontal_form_narrow do |f|
+  .col-md-12
+    - if locale == :ru
+      = f.input :name_ru, autofocus: true
+      = f.input :name_en, autofocus: true
+    - else
+      = f.input :name_en, autofocus: true
+      = f.input :name_ru, autofocus: true
+    = f.input :text, input_html: { rows: 10 }
+    = f.association :category, include_blank: false, collection: Category.all.pluck("name_#{ locale }", :id)
+
+    = f.input :cover, wrapper: :horizontal_form_narrow
+      = image_tag @article.cover, width: '100%', class: 'h-mb-2' if @article.cover.present?
+      = f.input_field :cover, id: 'image_input_validated', class: 'pull-left'
+
+  .col-md-offset-4.col-md-4.text-right
+    - if @article.new_record?
+      = f.button :submit, t('form_actions.create'), class: 'btn-info'
+    - else
+      = f.button :submit, t('form_actions.update'), class: 'btn-info'
+      = link_to t('form_actions.delete'), article_path(@article), method: :delete, data: { confirm: t('confirmation') }, class: 'btn btn-danger pull-left'

@@ -1,0 +1,12 @@
+.row
+  .col-md-12.text-center.h-mb-2
+    h3 = @article.name
+    p = image_tag @article.cover
+
+  .col-md-12
+    p = @article.text
+
+- if user_signed_in? && @article.user_id == current_user.id
+  p = link_to t('form_actions.edit'), edit_article_path(@article), class: 'btn btn-info'
+
+= link_to t('form_actions.back'), :back

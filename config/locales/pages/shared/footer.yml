@@ -1,0 +1,21 @@
+en:
+  shared:
+    footer:
+      feedback : Give Feedback
+      company  : Company Name
+      contact  : Contact Person
+      phone    : Contact Phone
+      country  : Country
+      comment  : Your Comments
+      rights   : All rights reserved.
+
+ru:
+  shared:
+    footer:
+      feedback : Обратная связь
+      company  : Название компании
+      contact  : Контактное лицо
+      phone    : Контактный телефон
+      country  : Страна
+      comment  : Ваши комментарии
+      rights   : Все права защищены.

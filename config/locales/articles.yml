@@ -1,0 +1,17 @@
+en:
+  article:
+    add    : Add
+    create : Create article
+    edit   : Edit %{name}
+    rating : Rating
+    author : Author
+    empty  : You haven't created any articles yet.
+
+ru:
+  article:
+    add    : Добавить
+    create : Создать статью
+    edit   : Редактировать %{name}
+    rating : Рейтинг
+    author : Автор
+    empty  : Вы не создали ни одной статьи.

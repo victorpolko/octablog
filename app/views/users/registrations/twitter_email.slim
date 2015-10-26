@@ -1,0 +1,12 @@
+- title t('devise.links.additional')
+
+h3.x-h3.x-h-underlined.h-mb-2 = t('devise.links.additional')
+
+= simple_form_for @user, as: :user, url: users_twitter_create_path, html: { class: 'form-horizontal' }, wrapper: :horizontal_form, defaults: { required: true } do |f|
+
+  .row.h-mb-2
+    = f.input :email, autofocus: true
+
+  .row.h-mb-2
+    .text-center
+      = f.button :submit, t('form_actions.send'), class: 'btn-info btn-long'

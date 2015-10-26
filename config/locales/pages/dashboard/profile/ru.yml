@@ -1,0 +1,18 @@
+ru:
+  dashboard:
+    profile:
+      page_title   : Профиль
+      personal     : Персональная информация
+      phone        : Номер телефона
+      verified     : Проверен
+      address_ph   : Где вас можно найти
+      time_zone_ph : Часовой пояс
+      about_ph     : Расскажите нам о себе
+      social       : Социальные аккаунты
+      linked       : Привязан
+      password     : Изменить пароль
+      new_password : Новый пароль
+
+    phone_verification:
+      verified   : Проверен
+      v_progress : Проверка...

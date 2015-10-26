@@ -1,0 +1,45 @@
+en:
+  form_actions:
+    accept  : Accept
+    back    : Back
+    cancel  : Cancel
+    change  : Change
+    clear   : Clear
+    close   : Close
+    create  : Create
+    delete  : Delete
+    draft   : Save to drafts
+    edit    : Edit
+    link    : Link
+    next    : Next
+    preview : Preview
+    publish : Publish
+    save    : Save
+    send    : Send
+    search  : Search
+    submit  : Submit
+    update  : Update
+    verify  : Verify
+
+ru:
+  form_actions:
+    accept  : Принять
+    back    : Назад
+    cancel  : Отмена
+    change  : Изменить
+    clear   : Очистить
+    close   : Закрыть
+    create  : Создать
+    delete  : Удалить
+    draft   : Сохранить черновик
+    edit    : Редактировать
+    link    : Добавить
+    next    : Дальше
+    preview : Предпросмотр
+    publish : Опубликовать
+    save    : Сохранить
+    send    : Отправить
+    search  : Поиск
+    submit  : Подтвердить
+    update  : Обновить
+    verify  : Подтвердить

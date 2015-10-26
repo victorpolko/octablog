@@ -1,0 +1,23 @@
+# Idea files
+/.idea
+*.iml
+
+# Ignore bundler config
+/.bundle
+
+# Ignore secret files
+/config/database.yml
+/config/secrets.yml
+
+# All logfiles and tempfiles
+/log/*.log
+/tmp
+
+# Uploaded files
+public/system
+
+# Mac files
+.DS_Store
+
+# Bower-installed files
+/vendor/assets/components

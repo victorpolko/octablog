@@ -1,0 +1,48 @@
+.row#search
+  .col-md-3
+    .well.sidebar-nav
+      ul.nav.nav-list
+        h4 = t('search.title')
+        = search_form_for @search, url: root_path, builder: SimpleForm::FormBuilder, html: { novalidate: true, data: { bind: 'asyncForm: koArticles' } }, defaults: { required: false }, wrapper: :vertical_form do |f|
+          = f.error_notification
+
+          .form-inputs
+            = f.input "name_#{ locale }_cont", label: t('search.name')
+            = f.input :text_cont, label: t('search.text')
+            = f.input :rating_gteq, label: t('search.rating_from'), as: :select, collection: (0..5).to_a, include_blank: false
+            = f.input :rating_lteq, label: t('search.rating_to'), as: :select, collection: (0..5).to_a, selected: 5
+            = f.input :author_first_name_cont, label: t('search.author')
+            = f.input :category_id_eq, label: t('search.category'), as: :select, collection: Category.all.pluck("name_#{ locale }", :id)
+            = f.input :created_at_gteq, label: t('search.created_fr'), input_html: { data: { bind: 'datemasked: true' } }
+            = f.input :created_at_lteq, label: t('search.created_to'), input_html: { data: { bind: 'datemasked: true' } }
+
+  .col-md-9
+    h1.text-center Octablog
+    hr
+
+    /! ko if: koArticles().length < 1
+    p = t('search.empty')
+    /! /ko
+
+    /! ko if: koArticles().length > 0
+    /! ko foreach: koArticles
+    a data-bind="attr: { href: url, title: name }"
+      .col-sm-6.col-md-4
+        .thumbnail
+          img data-bind="attr: { src: cover_url, alt: name }" height="100"
+          .caption
+            h3.x-article__name data-bind="text: name"
+            p
+              span> #{ t('article.rating') }:
+              span data-bind="text: rating"
+
+            /! ko if: author
+            p
+              span> #{ t('article.author') }:
+              span.x-article__author data-bind="text: author"
+            /! /ko
+    /! /ko
+    /! /ko
+
+- content_for :additional_js
+  = javascript_include_tag 'ko/search'

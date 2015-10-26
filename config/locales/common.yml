@@ -1,0 +1,9 @@
+en:
+  sitename     : 'Octablog'
+  image_ph     : Browse image...
+  confirmation : Are you sure?
+
+ru:
+  sitename     : 'Octablog'
+  image_ph     : Выбрать изображение...
+  confirmation : Вы уверены?

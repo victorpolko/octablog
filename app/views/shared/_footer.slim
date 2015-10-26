@@ -1,0 +1,41 @@
+footer data-bind="stopBinding: true"
+  .x-footer#footer
+    a.x-anchor-transparent name="footer"
+    .container
+      .row
+        .col-md-12.text-center
+          = link_to t('.feedback'), '#', data: { bind: 'click: enable, visible: !koEnabled()' }, class: 'btn btn-info'
+
+      . data-bind="visible: koEnabled()" style="display: none"
+        .row
+          .col-md-12.text-center
+            h3
+              = t('.feedback')
+
+        = simple_form_for :feedback, url: feedback_path, wrapper: :vertical_form, data: { bind: 'submit: submit' } do |f|
+          .row
+            .col-md-offset-3.col-md-6
+              = f.input :company, label: t('.company'), input_html: { data: { bind: 'value: koCompany' } }
+              .x-form-help.x-form-help_error style="display: none" data-bind="validationMessage: koCompany"
+
+              = f.input :contact, label: t('.contact'), input_html: { data: { bind: 'value: koContact' } }
+              .x-form-help.x-form-help_error style="display: none" data-bind="validationMessage: koContact"
+
+              = f.input :phone, label: t('.phone'), input_html: { data: { bind: 'phonemasked: true, value: koPhone' } }
+              .x-form-help.x-form-help_error style="display: none" data-bind="validationMessage: koPhone"
+
+              = f.input :email, label: t('email'), input_html: { data: { bind: 'value: koEmail' } }
+              .x-form-help.x-form-help_error style="display: none" data-bind="validationMessage: koEmail"
+
+              = f.input :country, as: :string, label: t('.country'), input_html: { data: { bind: 'value: koCountry' } }
+              .x-form-help.x-form-help_error style="display: none" data-bind="validationMessage: koCountry"
+
+              = f.input :comment, as: :text, label: t('.comment'), input_html: { rows: 5, data: { bind: 'value: koComment' } }
+              .x-form-help.x-form-help_error style="display: none" data-bind="validationMessage: koComment"
+
+          .row
+            .col-md-12.text-center
+              = f.button :submit, t('form_actions.send'), class: 'btn-info btn-book'
+
+- content_for :additional_js
+  = javascript_include_tag 'ko/feedback_form'

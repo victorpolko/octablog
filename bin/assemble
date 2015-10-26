@@ -1,0 +1,11 @@
+#!/bin/bash
+# Ruby gems
+bundle install && echo -e "\n"
+
+# Database
+bundle exec rake db:create db:migrate db:seed && echo -e "Database created successfully.\n"
+
+# Bower
+bower install && echo -e "Bower installed all modules to vendor/assets/components/ directory.\n"
+
+echo -e "\nYour project is ready to be run! Start server and Sidekiq with\n\tbundle exec foreman start"

@@ -1,0 +1,23 @@
+// This is a mini-manifest file to be included into every file in project
+// It imports all variables and mixins
+
+// Bootstrap core variables
+@import "bootstrap-sass/assets/stylesheets/bootstrap/variables"
+
+// Redefine bootstrap variables
+@import "includes/variables_bootstrap"
+
+@import "sass-mediaqueries/media-queries"
+@import "colors"
+@import "variables"
+
+// All project mixins should be here
+
+=inline-block($alignment: bottom)
+  display: inline-block
+  vertical-align: $alignment
+
+=ellipsis()
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
