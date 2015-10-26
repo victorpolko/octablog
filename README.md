@@ -17,3 +17,8 @@ A Simple Blog Application
 1. Sidekiq
 1. RSpec
 1. Foreman
+
+##Installation and assembly
+1. Clone *config/database.yml.example* and *config/secrets.yml.example* to *config/database.yml* and *config/secrets.yml* respectively and update their contents
+1. Bundle everything up with ``bin/assemble``
+1. Run ``bundle exec foreman start``. It will start Thin on port 3000 and daemonize sidekiq. All these are in *Procfile*.
